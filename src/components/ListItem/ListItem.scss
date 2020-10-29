@@ -93,11 +93,10 @@
       }
     }
     &.preview {
+      display: flex;
+      font-display: column;
+      flex-wrap: wrap;
       .info {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 60px 30px 30px auto;
-        grid-gap: 10px;
         .phone {
           grid-column: 2 span;
         }
@@ -116,12 +115,36 @@
       &.withVideo {
         display: flex;
         flex-direction: column;
+        grid-column: 1;
       }
     }
   }
 }
 @media only screen and (max-width: 576px) {
   .ListItem {
+    &.table {
+      .info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px 30px auto;
+        grid-gap: 10px;
+        .phone {
+          grid-column: 2 span;
+        }
+        .age {
+          grid-column: 1 span;
+          color: $maincolor;
+        }
+        .phrase {
+          grid-column: 1 span;
+        }
+        .star {
+          order: 0;
+          place-self: center flex-end;
+          width: 30px;
+        }
+      }
+    }
     &.preview {
       .info {
         display: grid;
