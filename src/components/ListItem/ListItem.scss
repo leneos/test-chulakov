@@ -1,0 +1,152 @@
+@import "../../theme/variables.scss";
+.ListItem {
+  border-radius: 8px;
+  padding: 20px 20px;
+  background: #ffffff;
+  cursor: pointer;
+  &:hover {
+    transition: all $cssAnimationDuration ease-in;
+    -webkit-box-shadow: 4px 4px 10px 2px rgba($maincolor, $shadowOpacity);
+    -moz-box-shadow: 4px 4px 10px 2px rgba($maincolor, $shadowOpacity);
+    box-shadow: 4px 4px 10px 2px rgba($maincolor, $shadowOpacity);
+  }
+  &:not(:hover) {
+    transition: box-shadow $cssAnimationDuration ease-in;
+
+    box-shadow: none;
+  }
+  button > svg {
+    fill: $maincolor;
+    display: block;
+  }
+  .info p {
+    margin: 0;
+  }
+  .credentials {
+    display: flex;
+    align-items: center;
+    width: 250px;
+    p {
+      font-weight: 500;
+      font-size: 1.125rem;
+    }
+    img {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+    }
+  }
+  button {
+    border: none;
+    background: none;
+    text-decoration: none;
+    padding: 0;
+    img {
+      display: block;
+    }
+  }
+  &.table {
+    .info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .star {
+        order: 4;
+      }
+    }
+  }
+  &.preview {
+    .info {
+      // padding-bottom: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 60px 30px 30px auto;
+      grid-gap: 10px;
+      .phone {
+        grid-column: 2 span;
+      }
+      .age {
+        grid-column: 1 span;
+        color: $maincolor;
+      }
+      .phrase {
+        grid-column: 1 span;
+      }
+      .star {
+        place-self: center flex-end;
+        width: 30px;
+      }
+    }
+    &.withVideo {
+      grid-column: span 2;
+      display: grid;
+      grid-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+@media only screen and (max-width: 1080px) {
+  .ListItem {
+    &.table {
+      .info {
+        flex-direction: row;
+      }
+    }
+    &.preview {
+      .info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px 30px 30px auto;
+        grid-gap: 10px;
+        .phone {
+          grid-column: 2 span;
+        }
+        .age {
+          grid-column: 1 span;
+          color: $maincolor;
+        }
+        .phrase {
+          grid-column: 1 span;
+        }
+        .star {
+          place-self: center flex-end;
+          width: 30px;
+        }
+      }
+      &.withVideo {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 576px) {
+  .ListItem {
+    &.preview {
+      .info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px 30px 30px auto;
+        grid-gap: 10px;
+        .phone {
+          grid-column: 2 span;
+        }
+        .age {
+          grid-column: 1 span;
+          color: $maincolor;
+        }
+        .phrase {
+          grid-column: 1 span;
+        }
+        .star {
+          place-self: center flex-end;
+          width: 30px;
+        }
+      }
+      &.withVideo {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

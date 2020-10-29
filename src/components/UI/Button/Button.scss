@@ -1,0 +1,29 @@
+@import "../../../theme/variables.scss";
+.Button {
+  display: block;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #1f1f1f;
+  font-size: 1rem;
+  font-weight: normal;
+  border: none;
+  transition: all $cssAnimationDuration ease-out;
+  padding: 20px 30px;
+  cursor: pointer;
+  &.active {
+    background-color: $maincolor;
+    color: white;
+  }
+  &:not(.active):hover {
+    background-color: $secondaryColor;
+    color: #1f1f1f;
+    transform: translateY(-5px);
+    transition: all $cssAnimationDuration ease-in;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .Button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+}

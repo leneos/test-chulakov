@@ -1,0 +1,54 @@
+@import "../../theme/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+* {
+  box-sizing: border-box;
+}
+html {
+  background: $backgroundGradient;
+  font-size: 16px;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0 0 0 calc(100vw - 100%);
+}
+.App {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+@media only screen and (max-width: 576px) {
+  body {
+    margin-left: 0;
+  }
+  .App {
+    max-width: 576px;
+    margin: 0 auto;
+    padding: 15px 15px;
+  }
+  p {
+    font-size: 0.875rem;
+  }
+  .ListItem .info {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  body {
+    margin-left: 0;
+  }
+  .App {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 15px 15px;
+  }
+  p {
+    font-size: 0.875rem;
+  }
+  .ListItem .info {
+    display: flex;
+    flex-direction: column;
+  }
+}

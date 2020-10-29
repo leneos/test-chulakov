@@ -1,0 +1,6 @@
+.ViewPanel {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
