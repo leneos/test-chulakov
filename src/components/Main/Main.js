@@ -21,6 +21,7 @@ export const Main = ({ history }) => {
   const viewState = useSelector(selectViewState);
   const location = useLocation();
   useEffect(() => {
+    console.log(history);
     const { sd, st, v } = queryString.parse(location.search);
     if (
       sd !== "" &&
@@ -28,7 +29,10 @@ export const Main = ({ history }) => {
       v !== "" &&
       sd !== undefined &&
       st !== undefined &&
-      v !== undefined
+      v !== undefined &&
+      (sd === "ascending" || sd === "descending") &&
+      (st === "id" || st === "name" || st === "age") &&
+      (v === "table" || v === "preview")
     ) {
       dispatch(setSortDirection(sd));
       dispatch(setSortType(st));
