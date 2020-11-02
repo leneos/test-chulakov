@@ -120,6 +120,7 @@
     }
   }
 }
+
 @media only screen and (max-width: 576px) {
   .ListItem {
     &.table {
@@ -128,6 +129,72 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 60px 30px auto;
         grid-gap: 10px;
+        .credentials {
+          max-width: 200px;
+          img {
+            margin-right: 10px;
+          }
+        }
+        .phone {
+          grid-column: 2 span;
+        }
+        .age {
+          grid-column: 1 span;
+          color: $maincolor;
+        }
+        .phrase {
+          grid-column: 1 span;
+        }
+        .star {
+          order: 0;
+          place-self: center flex-end;
+          width: 30px;
+        }
+      }
+    }
+    &.preview {
+      .info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px 30px 30px auto;
+        grid-gap: 10px;
+        .credentials {
+          max-width: 200px;
+          img {
+            margin-right: 10px;
+          }
+        }
+        .phone {
+          grid-column: 2 span;
+        }
+        .age {
+          grid-column: 1 span;
+          color: $maincolor;
+        }
+        .phrase {
+          grid-column: 1 span;
+        }
+        .star {
+          place-self: center flex-end;
+          width: 30px;
+        }
+      }
+      &.withVideo {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 321px) {
+  .ListItem {
+    &.table {
+      .info {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px 30px auto;
+        grid-gap: 10px;
+
         .phone {
           grid-column: 2 span;
         }
